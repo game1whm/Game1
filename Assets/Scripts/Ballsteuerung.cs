@@ -10,6 +10,8 @@ public class Ballsteuerung : MonoBehaviour
     public float speed = 10.0f;
     public float boostforce = 30.0f;
     Rigidbody rBody;
+    private string Level1;
+    private string OpenWorld;
 
     // Start is called before the first frame update
     void Start()
@@ -58,5 +60,6 @@ public class Ballsteuerung : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 }
 
