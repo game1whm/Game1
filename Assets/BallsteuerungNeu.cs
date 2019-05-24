@@ -15,6 +15,7 @@ public class BallsteuerungNeu : MonoBehaviour
     public Rigidbody rBody;
     public Rigidbody rb;
     public GameObject BlueWall;
+    public GameObject Explosion_A;
     public int countBlue;
     private int countRed;
 
@@ -27,6 +28,7 @@ public class BallsteuerungNeu : MonoBehaviour
         countBlue = 0;
         countRed = 0;
         countdown = 0;
+        Explosion_A.SetActive(false);
 
 
     }
@@ -93,11 +95,16 @@ public class BallsteuerungNeu : MonoBehaviour
             if (countBlue == 3)
             {
                 BlueWall.SetActive(false);
+                Explosion_A.SetActive(true);
             }
         }
         if (other.gameObject.CompareTag("Sprung"))
         {
             countdown = 0f;
+        }
+        if (other.gameObject.CompareTag("FLAMMENDESTODES"))
+        {
+            Restart();
         }
     }
 
