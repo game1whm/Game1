@@ -9,6 +9,8 @@ TagManager:
   - TargetBlue
   - BlueWall
   - FLAMMENDESTODES
+  - FxTemporaire
+  - Portal
   layers:
   - Default
   - TransparentFX
