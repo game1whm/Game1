@@ -19,10 +19,12 @@ public class BallsteuerungNeu : MonoBehaviour
     public GameObject Magicfireproblue2;
     public GameObject Magicfireproblue3;
     public GameObject Magicfireproblue4;
+    public GameObject Magicfireproblue5;
     public GameObject Magicfire31;
     public GameObject Magicfire32;
     public GameObject Magicfire33;
     public GameObject Magicfire34;
+    public GameObject Magicfire35;
     public int countBlue;
     //private int countRed;
 
@@ -40,10 +42,12 @@ public class BallsteuerungNeu : MonoBehaviour
         Magicfireproblue2.SetActive(false);
         Magicfireproblue3.SetActive(false);
         Magicfireproblue4.SetActive(false);
+        Magicfireproblue5.SetActive(false);
         Magicfire31.SetActive(true);
         Magicfire32.SetActive(true);
         Magicfire33.SetActive(true);
         Magicfire34.SetActive(true);
+        Magicfire35.SetActive(true);
 
         Portal.SetActive(false);
 
@@ -128,6 +132,12 @@ public class BallsteuerungNeu : MonoBehaviour
             Magicfireproblue4.SetActive(true);
             Magicfire34.SetActive(false);
 
+        }
+        if ( countBlue== 5)
+        {
+            Magicfireproblue5.SetActive(true);
+            Magicfire35.SetActive(false);
+            Portal.SetActive(true);
         }
         if (other.gameObject.CompareTag("Sprung"))
         {
