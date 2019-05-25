@@ -14,7 +14,7 @@ public class BallsteuerungNeu : MonoBehaviour
     float countdown;
     public Rigidbody rBody;
     public Rigidbody rb;
-    public GameObject BlueWall;
+    public GameObject Portal;
     public GameObject Magicfireproblue1;
     public GameObject Magicfireproblue2;
     public GameObject Magicfireproblue3;
@@ -44,6 +44,8 @@ public class BallsteuerungNeu : MonoBehaviour
         Magicfire32.SetActive(true);
         Magicfire33.SetActive(true);
         Magicfire34.SetActive(true);
+
+        Portal.SetActive(false);
 
     }
     // Update is called once per frame
@@ -108,7 +110,7 @@ public class BallsteuerungNeu : MonoBehaviour
             countBlue = countBlue + 1;
             if (countBlue == 4)
             {
-                BlueWall.SetActive(false);
+                Portal.SetActive(true);
             }
         }
         if(countBlue==1)
