@@ -1,0 +1,145 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
+
+public class BallsteuerungTutorial : MonoBehaviour
+
+{
+    public float speed = 10.0f;
+    public float boostforce = 30.0f;
+    public float jumpforce = 30.0f;
+    public Rigidbody rBody;
+    public GameObject Portal;
+    public GameObject Magicfireproblue1;
+    public GameObject Magicfireproblue2;
+    public GameObject Magicfireproblue3;
+    public GameObject Magicfireproblue4;
+    public GameObject Magicfire31;
+    public GameObject Magicfire32;
+    public GameObject Magicfire33;
+    public GameObject Magicfire34;
+    public GameObject BlueWall;
+    float countdown;
+    public int countBlue;
+    //private int countRed;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rBody = GetComponent<Rigidbody>();
+        countBlue = 0;
+        Magicfireproblue1.SetActive(false);
+        Magicfireproblue2.SetActive(false);
+        Magicfireproblue3.SetActive(false);
+        Magicfireproblue4.SetActive(false);
+        Magicfire31.SetActive(true);
+        Magicfire32.SetActive(true);
+        Magicfire33.SetActive(true);
+        Magicfire34.SetActive(true);
+        BlueWall.SetActive(true);
+
+        Portal.SetActive(false);
+        countdown = 0;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        // Drehen
+        float turn = Input.GetAxis("Horizontal");
+        transform.Rotate(0.0f, turn * 2, 0.0f, Space.Self);
+
+        // Vorwärts/Rückwärts
+        Vector3 controlSignal = Vector3.zero;
+        controlSignal.z = Input.GetAxisRaw("Vertical");
+        rBody.AddRelativeForce(controlSignal * speed);
+
+        if (transform.position.y < -1)
+        {
+            Restart();
+        }
+
+        //Springen
+        if (Input.GetKeyDown("space"))
+        {
+            if (countdown < 1)
+            {
+                Vector3 jump = Vector3.zero;
+                jump.y = 1f;
+                rBody.AddRelativeForce(jump * jumpforce);
+                countdown = 1;
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("TargetBlue"))
+        {
+            other.gameObject.SetActive(false);
+            countBlue = countBlue + 1;
+            if (countBlue == 4)
+            {
+                BlueWall.SetActive(false);
+            }
+        }
+        if (countBlue == 1)
+        {
+            Magicfireproblue1.SetActive(true);
+            Magicfire31.SetActive(false);
+        }
+        if (countBlue == 2)
+        {
+            Magicfireproblue2.SetActive(true);
+            Magicfire32.SetActive(false);
+        }
+        if (countBlue == 3)
+        {
+            Magicfireproblue3.SetActive(true);
+            Magicfire33.SetActive(false);
+        }
+        if (countBlue == 4)
+        {
+            Magicfireproblue4.SetActive(true);
+            Magicfire34.SetActive(false);
+
+        }
+        if (other.gameObject.CompareTag("Sprung"))
+        {
+            countdown = 0f;
+        }
+
+        if (other.gameObject.CompareTag("FLAMMENDESTODES"))
+        {
+            Restart();
+        }
+
+        if (other.gameObject.CompareTag("Portal"))
+        {
+            SceneManager.LoadScene("OpenWorld");
+        }
+    }
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Sprung"))
+        {
+            if (Input.GetKeyDown("b"))
+            {
+                Vector3 boost = Vector3.zero;
+                boost.z = Input.GetAxisRaw("Vertical");
+                rBody.AddRelativeForce(boost * speed * boostforce);
+            }
+        }
+    }
+
+    //Restart
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+}

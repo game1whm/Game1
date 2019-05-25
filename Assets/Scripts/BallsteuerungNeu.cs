@@ -129,10 +129,6 @@ public class BallsteuerungNeu : MonoBehaviour
             Magicfire34.SetActive(false);
 
         }
-        if (other.gameObject.CompareTag("Sprung"))
-        {
-            countdown = 0f;
-        }
 
         if (other.gameObject.CompareTag("FLAMMENDESTODES"))
         {
@@ -155,7 +151,13 @@ public class BallsteuerungNeu : MonoBehaviour
                 rBody.AddRelativeForce(boost * speed * boostforce);
             }
         }
+        if (other.gameObject.CompareTag("Sprung"))
+        {
+            countdown = 0f;
+        }
+
     }
+
 
     //Restart
     public void Restart()
