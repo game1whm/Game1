@@ -15,9 +15,16 @@ public class BallsteuerungNeu : MonoBehaviour
     public Rigidbody rBody;
     public Rigidbody rb;
     public GameObject BlueWall;
-    public GameObject Explosion_A;
+    public GameObject Magicfireproblue1;
+    public GameObject Magicfireproblue2;
+    public GameObject Magicfireproblue3;
+    public GameObject Magicfireproblue4;
+    public GameObject Magicfire31;
+    public GameObject Magicfire32;
+    public GameObject Magicfire33;
+    public GameObject Magicfire34;
     public int countBlue;
-    private int countRed;
+    //private int countRed;
 
 
     // Start is called before the first frame update
@@ -26,10 +33,17 @@ public class BallsteuerungNeu : MonoBehaviour
         rBody = GetComponent<Rigidbody>();
         rb = GetComponent<Rigidbody>();
         countBlue = 0;
-        countRed = 0;
+        //countRed = 0;
         countdown = 0;
-        Explosion_A.SetActive(false);
 
+        Magicfireproblue1.SetActive(false);
+        Magicfireproblue2.SetActive(false);
+        Magicfireproblue3.SetActive(false);
+        Magicfireproblue4.SetActive(false);
+        Magicfire31.SetActive(true);
+        Magicfire32.SetActive(true);
+        Magicfire33.SetActive(true);
+        Magicfire34.SetActive(true);
 
     }
     // Update is called once per frame
@@ -92,11 +106,31 @@ public class BallsteuerungNeu : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             countBlue = countBlue + 1;
-            if (countBlue == 3)
+            if (countBlue == 4)
             {
                 BlueWall.SetActive(false);
-                Explosion_A.SetActive(true);
             }
+        }
+        if(countBlue==1)
+        {
+            Magicfireproblue1.SetActive(true);
+            Magicfire31.SetActive(false);
+        }
+        if (countBlue == 2)
+        {
+            Magicfireproblue2.SetActive(true);
+            Magicfire32.SetActive(false);
+        }
+        if (countBlue == 3)
+        {
+            Magicfireproblue3.SetActive(true);
+            Magicfire33.SetActive(false);
+        }
+        if (countBlue == 4)
+        {
+            Magicfireproblue4.SetActive(true);
+            Magicfire34.SetActive(false);
+
         }
         if (other.gameObject.CompareTag("Sprung"))
         {
