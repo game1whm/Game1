@@ -133,12 +133,16 @@ public class BallsteuerungNeu : MonoBehaviour
         {
             countdown = 0f;
         }
+
         if (other.gameObject.CompareTag("FLAMMENDESTODES"))
         {
             Restart();
         }
 
-
+        if (other.gameObject.CompareTag("Portal"))
+        {
+            SceneManager.LoadScene("OpenWorld");
+        }
     }
     void OnTriggerStay(Collider other)
     {
