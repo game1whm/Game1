@@ -133,8 +133,7 @@ public class BallsteuerungNeu : MonoBehaviour
             Magicfire34.SetActive(false);
 
         }
-<<<<<<< HEAD
-=======
+
         if ( countBlue== 5)
         {
             Magicfireproblue5.SetActive(true);
@@ -145,7 +144,7 @@ public class BallsteuerungNeu : MonoBehaviour
         {
             countdown = 0f;
         }
->>>>>>> 05ea10634668c3e2d69efe1b410e651643422fba
+
 
         if (other.gameObject.CompareTag("FLAMMENDESTODES"))
         {
