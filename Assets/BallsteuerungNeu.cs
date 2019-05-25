@@ -61,13 +61,8 @@ public class BallsteuerungNeu : MonoBehaviour
         controlSignal.z = Input.GetAxisRaw("Vertical");
         rBody.AddRelativeForce(controlSignal * speed);
 
-        //Boost
-        if (Input.GetKeyDown("b"))
-        {
-            Vector3 boost = Vector3.zero;
-            boost.z = Input.GetAxisRaw("Vertical");
-            rBody.AddRelativeForce(boost * speed * boostforce);
-        }
+
+
         // Restart einleiten
         if (Input.GetKey("r"))
         {
@@ -142,8 +137,21 @@ public class BallsteuerungNeu : MonoBehaviour
         {
             Restart();
         }
-    }
 
+
+    }
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Sprung"))
+        {
+            if (Input.GetKeyDown("b"))
+            {
+                Vector3 boost = Vector3.zero;
+                boost.z = Input.GetAxisRaw("Vertical");
+                rBody.AddRelativeForce(boost * speed * boostforce);
+            }
+        }
+    }
 
     //Restart
     public void Restart()
