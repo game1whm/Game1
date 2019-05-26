@@ -11,6 +11,8 @@ TagManager:
   - FLAMMENDESTODES
   - FxTemporaire
   - Portal
+  - Boost
+  - Sprung+Boost
   layers:
   - Default
   - TransparentFX
