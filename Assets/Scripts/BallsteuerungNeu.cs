@@ -12,8 +12,7 @@ public class BallsteuerungNeu : MonoBehaviour
     public float boostforce = 30.0f;
     public float jumpforce = 30.0f;
     float countdown;
-    public Rigidbody rBody;
-    public Rigidbody rb;
+    private Rigidbody rBody;
     public GameObject Portal;
     public GameObject Magicfireproblue1;
     public GameObject Magicfireproblue2;
@@ -33,7 +32,7 @@ public class BallsteuerungNeu : MonoBehaviour
     void Start()
     {
         rBody = GetComponent<Rigidbody>();
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         countBlue = 0;
         //countRed = 0;
         countdown = 0;
