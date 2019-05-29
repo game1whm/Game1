@@ -111,7 +111,7 @@ public class Tutorial : MonoBehaviour
             if (countBlue == 5)
             {
                 BlueWall.gameObject.SetActive(false);
-                Portal.SetActive(true);
+                Portal.gameObject.SetActive(true);
             }
         }
         if (countBlue == 1)
@@ -155,7 +155,7 @@ public class Tutorial : MonoBehaviour
 
         if (other.gameObject.CompareTag("Portal"))
         {
-            SceneManager.LoadScene("OpenWorld");
+            SceneManager.LoadScene("OverWorld");
         }
     }
     void OnTriggerStay(Collider other)
