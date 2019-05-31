@@ -15173,8 +15173,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910263351}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.0000000043370094, y: 0.99875855, z: -0.04981375, w: -0.00000008891458}
+  m_LocalPosition: {x: -47, y: 1.5, z: 327}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16900,7 +16900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1220274956
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17475,7 +17475,6 @@ MonoBehaviour:
   Magicfire33: {fileID: 1942967355}
   Magicfire34: {fileID: 645403942}
   Magicfire35: {fileID: 1365248195}
-  Heart: {fileID: 0}
   countBlue: 0
 --- !u!54 &1278185390
 Rigidbody:
@@ -18670,7 +18669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1523301216
 MonoBehaviour:
   m_ObjectHideFlags: 0
