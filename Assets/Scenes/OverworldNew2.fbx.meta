@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4e45be1aea1ab034f803a2cc6bada390
+guid: 9640d7aea5d01e64096fdb09e12ecccd
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -15,8 +15,7 @@ ModelImporter:
     2100000: Material.001
     2100002: Material.002
     2100004: Material.003
-    2100006: Material
-    2100008: Wald.001
+    2100006: Wald.001
     2300000: Cube
     3300000: Cube
     4300000: Cube
