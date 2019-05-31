@@ -12,6 +12,8 @@ public class BallsteuerungNeu : MonoBehaviour
     public float boostforce = 30.0f;
     public float jumpforce = 30.0f;
     float countdown;
+    private int lives;
+    float countHeart;
     private Rigidbody rBody;
     public GameObject Portal;
     public GameObject Magicfireproblue1;
@@ -24,7 +26,11 @@ public class BallsteuerungNeu : MonoBehaviour
     public GameObject Magicfire33;
     public GameObject Magicfire34;
     public GameObject Magicfire35;
+    public GameObject Heart;
+    public GameObject HeartAdd;
     public int countBlue;
+    public Text Leben;
+
     //private int countRed;
 
 
@@ -50,10 +56,27 @@ public class BallsteuerungNeu : MonoBehaviour
 
         Portal.SetActive(false);
 
+        Heart.SetActive(false);
+        HeartAdd.SetActive(true);
+        lives = 5;
+        Leben.text = "Leben : " + lives.ToString();
     }
     // Update is called once per frame
     void Update()
     {
+     
+        countHeart++;
+
+        if (countHeart == 60)
+        {
+            Heart.SetActive(false);
+        }
+
+        if (lives == 0)
+        {
+            Restart();
+        }
+
 
         // Drehen
         float turn = Input.GetAxis("Horizontal");
@@ -100,7 +123,9 @@ public class BallsteuerungNeu : MonoBehaviour
     }
     public void LateUpdate()
     {
+      
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("TargetBlue"))
@@ -148,14 +173,26 @@ public class BallsteuerungNeu : MonoBehaviour
 
         if (other.gameObject.CompareTag("FLAMMENDESTODES"))
         {
-            Restart();
+            lives--;
+            Heart.SetActive(true);
+            countHeart = 0;
+            Leben.text = "Leben : " + lives.ToString();
+            transform.position = new Vector3(1f, 3f, 90f);
         }
 
         if (other.gameObject.CompareTag("Portal"))
         {
             SceneManager.LoadScene("OpenWorld");
         }
+
+        if (other.gameObject.CompareTag("Heart"))
+        {
+            lives++;
+            HeartAdd.SetActive(false);
+            Leben.text = "Leben : " + lives.ToString();
+        }
     }
+
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Sprung"))
