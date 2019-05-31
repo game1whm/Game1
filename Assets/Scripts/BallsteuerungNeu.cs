@@ -12,10 +12,7 @@ public class BallsteuerungNeu : MonoBehaviour
     public float boostforce = 30.0f;
     public float jumpforce = 30.0f;
     float countdown;
-    float countdownHeart;
-    float lives;
     private Rigidbody rBody;
-
     public GameObject Portal;
     public GameObject Magicfireproblue1;
     public GameObject Magicfireproblue2;
@@ -27,10 +24,7 @@ public class BallsteuerungNeu : MonoBehaviour
     public GameObject Magicfire33;
     public GameObject Magicfire34;
     public GameObject Magicfire35;
-    public GameObject Heart;
-
     public int countBlue;
-    
     //private int countRed;
 
 
@@ -42,8 +36,6 @@ public class BallsteuerungNeu : MonoBehaviour
         countBlue = 0;
         //countRed = 0;
         countdown = 0;
-        countdownHeart = 0;
-        lives = 5;
 
         Magicfireproblue1.SetActive(false);
         Magicfireproblue2.SetActive(false);
@@ -55,9 +47,8 @@ public class BallsteuerungNeu : MonoBehaviour
         Magicfire33.SetActive(true);
         Magicfire34.SetActive(true);
         Magicfire35.SetActive(true);
-        Portal.SetActive(false);
 
-        Heart.SetActive(false);
+        Portal.SetActive(false);
 
     }
     // Update is called once per frame
@@ -73,17 +64,7 @@ public class BallsteuerungNeu : MonoBehaviour
         controlSignal.z = Input.GetAxisRaw("Vertical");
         rBody.AddRelativeForce(controlSignal * speed);
 
-        countdownHeart ++;
 
-        if (countdownHeart == 60)
-        {
-            Heart.SetActive(false);
-        }
-
-        if(lives <= 0)
-        {
-            Restart();
-        }
 
         // Restart einleiten
         if (Input.GetKey("r"))
@@ -115,18 +96,16 @@ public class BallsteuerungNeu : MonoBehaviour
 
 
         }
-
     }
     public void LateUpdate()
     {
-
     }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("TargetBlue"))
         {
             other.gameObject.SetActive(false);
-            countBlue ++;
+            countBlue = countBlue + 1;
             if (countBlue == 4)
             {
                 Portal.SetActive(true);
@@ -168,17 +147,12 @@ public class BallsteuerungNeu : MonoBehaviour
 
         if (other.gameObject.CompareTag("FLAMMENDESTODES"))
         {
-            if (countdownHeart > 61)
-            {
-                Heart.SetActive(true);
-                countdownHeart = 0;
-                lives--;
-            }
+            Restart();
         }
 
         if (other.gameObject.CompareTag("Portal"))
         {
-            SceneManager.LoadScene("OverWorld");
+            SceneManager.LoadScene("OpenWorld");
         }
     }
     void OnTriggerStay(Collider other)
