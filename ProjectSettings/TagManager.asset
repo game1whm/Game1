@@ -13,6 +13,7 @@ TagManager:
   - Portal
   - Boost
   - Sprung+Boost
+  - Heart
   layers:
   - Default
   - TransparentFX
