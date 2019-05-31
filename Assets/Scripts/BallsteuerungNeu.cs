@@ -71,7 +71,8 @@ public class BallsteuerungNeu : MonoBehaviour
         {
             Restart();
         }
-        if (transform.position.y < -1)
+        if (transform.position.y < -15
+        )
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
