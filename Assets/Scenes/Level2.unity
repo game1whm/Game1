@@ -612,8 +612,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45189111}
-  m_LocalRotation: {x: -0.000000012516523, y: 0.99875855, z: -0.049813725, w: -0.00000022493799}
-  m_LocalPosition: {x: 320.8, y: 1.7437, z: 272.2}
+  m_LocalRotation: {x: 0.000000116581454, y: 0.99875855, z: -0.049813583, w: 0.0000023644534}
+  m_LocalPosition: {x: -49.2, y: 1.7437, z: 279.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1604138087}
@@ -15543,8 +15543,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910263351}
-  m_LocalRotation: {x: -0.000000012516523, y: 0.99875855, z: -0.049813725, w: -0.00000022493799}
-  m_LocalPosition: {x: 320.8, y: 1.7437, z: 272.2}
+  m_LocalRotation: {x: 0.000000116581454, y: 0.99875855, z: -0.049813583, w: 0.0000023644534}
+  m_LocalPosition: {x: -49.2, y: 1.7437, z: 279.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -17671,7 +17671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1220274956
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18246,7 +18246,10 @@ MonoBehaviour:
   Magicfire33: {fileID: 1942967355}
   Magicfire34: {fileID: 645403942}
   Magicfire35: {fileID: 1365248195}
+  Heart: {fileID: 0}
+  HeartAdd: {fileID: 0}
   countBlue: 0
+  Leben: {fileID: 0}
 --- !u!54 &1278185390
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18329,7 +18332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278185388}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 320.8, y: 0.7437, z: 262.2}
+  m_LocalPosition: {x: -49.2, y: 0.7437, z: 269.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -19797,7 +19800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1523301216
 MonoBehaviour:
   m_ObjectHideFlags: 0

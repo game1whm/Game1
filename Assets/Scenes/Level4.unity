@@ -6174,7 +6174,10 @@ MonoBehaviour:
   Magicfire33: {fileID: 194551814}
   Magicfire34: {fileID: 1213422710}
   Magicfire35: {fileID: 1341716130}
+  Heart: {fileID: 0}
+  HeartAdd: {fileID: 0}
   countBlue: 0
+  Leben: {fileID: 0}
 --- !u!54 &372688167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31180,6 +31183,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: -0.74321
       objectReference: {fileID: 0}
+    - target: {fileID: 7645157086698599438, guid: 47784729a357940ca9aab6853c123213,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4bc98f2b6f95341abbd12ea52abdc5ed, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47784729a357940ca9aab6853c123213, type: 3}
 --- !u!1001 &1181513042
