@@ -1,26 +1,14 @@
 fileFormatVersion: 2
-guid: 4e45be1aea1ab034f803a2cc6bada390
+guid: 8104a30ace2d16243adc3b57aa385397
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Camera
-    100002: Cube
-    100004: Lamp
-    100006: //RootNode
-    400000: Camera
-    400002: Cube
-    400004: Lamp
-    400006: //RootNode
-    2000000: Camera
-    2100000: Material.001
-    2100002: Material.002
-    2100004: Material.003
-    2100006: Material
-    2100008: Wald.001
-    2300000: Cube
-    3300000: Cube
-    4300000: Cube
-    10800000: Lamp
+    100000: //RootNode
+    400000: //RootNode
+    2100000: No Name
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Icosphere
   externalObjects: {}
   materials:
     importMaterials: 1
