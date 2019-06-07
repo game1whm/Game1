@@ -58,7 +58,8 @@ public class BallsteuerungNeu : MonoBehaviour
 
         Heart.SetActive(false);
         HeartAdd.SetActive(true);
-        lives = 5;
+                    
+       lives = 5;
         Leben.text = "Leben : " + lives.ToString();
     }
     // Update is called once per frame
@@ -116,8 +117,6 @@ public class BallsteuerungNeu : MonoBehaviour
                 countdown = 1;
 
             }
-
-
 
         }
     }
